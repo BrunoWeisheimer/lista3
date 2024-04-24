@@ -1,0 +1,8 @@
+n = float(input('Digite um numero:'))
+divisor = float(input('Digite por quanto quer dividir:'))
+
+if divisor != 0:
+    resultado = n/divisor
+    print('O resultado é:{}'.format(resultado))
+else:
+    print('Erro! O divisor não pode ser 0!')
