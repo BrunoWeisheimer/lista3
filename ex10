@@ -1,0 +1,20 @@
+import random
+
+def simular_lancamento(num_faces):
+    return random.randint(1, num_faces)
+
+def main():
+    print("Bem-vindo ao simulador de lançamento de dados!")
+    print("Escolha o número de faces do dado (4, 6, 8, 10, 12 ou 16): ")
+    
+    num_faces = int(input("Digite o número de faces desejado: "))
+    
+    if num_faces not in [4, 6, 8, 10, 12, 16]:
+        print("Número de faces inválido. Por favor, escolha entre 4, 6, 8, 10, 12 ou 16.")
+        return
+    
+    lancamento = simular_lancamento(num_faces)
+    print(f"O dado de {num_faces} faces foi lançado e o resultado foi: {lancamento}")
+
+if __name__ == "__main__":
+    main()
