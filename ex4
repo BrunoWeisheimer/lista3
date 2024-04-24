@@ -1,0 +1,6 @@
+n = int(input('Digite um numero inteiro:'))
+
+if n%3 == 0:
+    print('Sim! o numero é divisivel por 3.')
+else:
+    print('Não! 0 numero não é divisivel por 3.')
