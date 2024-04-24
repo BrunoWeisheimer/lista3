@@ -1,0 +1,14 @@
+valor_do_produto = float(input('Digite o valor do produto: '))
+
+if valor_do_produto <= 20:
+    lucro = valor_do_produto*0.45
+    total_compra = valor_do_produto + lucro
+    print('O valor total da compra com 45% de lucro é: R${}'.format(total_compra))
+elif valor_do_produto > 20 and valor_do_produto < 50:
+    lucro2 = valor_do_produto * 0.35
+    total_compra2 = valor_do_produto + lucro2
+    print('O valor total da compra com 35% de lucro é: R${}'.format(total_compra2))
+elif valor_do_produto > 50:
+    lucro3 = valor_do_produto * 0.25
+    total_compra3 = valor_do_produto + lucro3
+    print('O valor total da compra com 25% de lucro é; R${} '.format(total_compra3))
