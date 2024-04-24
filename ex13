@@ -1,0 +1,44 @@
+# Função para calcular a média final
+def calcular_media_final(nota_a, nota_b):
+    return (0.33 * nota_a) + (0.67 * nota_b)
+
+# Função para verificar aprovação
+def verificar_aprovacao(media_final):
+    if media_final >= 6.0:
+        return "Aprovado"
+    else:
+        return "Recuperação"
+
+# Função principal
+def main():
+    nota_a = float(input("Digite a nota do Grau A: "))
+    nota_b = float(input("Digite a nota do Grau B: "))
+    
+    media_final = calcular_media_final(nota_a, nota_b)
+    resultado = verificar_aprovacao(media_final)
+    
+    if resultado == "Aprovado":
+        print("Parabéns, você foi aprovado!")
+    else:
+        print("Você ficou em recuperação.")
+        substituir = input("Deseja substituir o Grau A ou o Grau B? (a/b): ")
+        
+        while substituir not in ['a', 'b']:
+            substituir = input("Opção inválida. Por favor, digite 'a' ou 'b': ")
+
+        nota_c = float(input("Digite a nota do Grau C: "))
+        
+        if substituir == 'a':
+            media_final = calcular_media_final(nota_c, nota_b)
+        else:
+            media_final = calcular_media_final(nota_a, nota_c)
+
+        if media_final >= 6.0:
+            print("Parabéns, você foi aprovado!")
+        else:
+            print("Você foi reprovado.")
+
+# Chamada da função principal
+main()
+
+    
