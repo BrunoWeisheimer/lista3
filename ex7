@@ -1,0 +1,13 @@
+def calcular_desconto_previdenciario(salario):
+    # Define o valor máximo de desconto
+    max_desconto = 318.20
+    
+    # Calcula o desconto proporcional ao salário
+    desconto = min(salario * 0.11, max_desconto)
+    
+    return desconto
+
+# Exemplo de uso:
+salario = float(input("Digite o salário do funcionário: "))
+desconto = calcular_desconto_previdenciario(salario)
+print("O desconto previdenciário é: R$", desconto)
