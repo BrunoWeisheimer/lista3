@@ -1,0 +1,33 @@
+def calcular_valor_a_pagar(preco_etiqueta, condicao_pagamento):
+    if condicao_pagamento == 1:
+        desconto = preco_etiqueta * 0.15
+        valor_a_pagar = preco_etiqueta - desconto
+    elif condicao_pagamento == 2:
+        desconto = preco_etiqueta * 0.10
+        valor_a_pagar = preco_etiqueta - desconto
+    elif condicao_pagamento == 3 or condicao_pagamento == 4:
+        if condicao_pagamento == 3:
+            num_parcelas = 2
+        else:
+            num_parcelas = 3
+        valor_a_pagar = preco_etiqueta / num_parcelas
+        juros = 0
+        if condicao_pagamento == 4:
+            juros = valor_a_pagar * 0.10
+        valor_a_pagar += juros
+    else:
+        print("Condição de pagamento inválida.")
+        return None
+    return valor_a_pagar
+
+# Exemplo de uso:
+preco_etiqueta = float(input("Digite o preço normal de etiqueta do produto: "))
+print('1 - À vista em dinheiro, recebe 15% de desconto')
+print('2 - À vista no cartão de crédito, recebe 10% de desconto')
+print('3 - Em duas vezes, preço normal de etiqueta sem juros')
+print('4 - Em três vezes, preço normal de etiqueta mais juros de 10%')
+condicao_pagamento = int(input("Digite o código da condição de pagamento (1, 2, 3 ou 4): "))
+
+valor_a_pagar = calcular_valor_a_pagar(preco_etiqueta, condicao_pagamento)
+if valor_a_pagar is not None:
+    print("Valor a ser pago: R$", valor_a_pagar)
